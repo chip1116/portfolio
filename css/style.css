@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+  
+
+}
+
+body{
+
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+header,h1,h2 {
+  font-size: 24px;
+  margin: 30px 0 0 20px;
+}
+h1,h2{
+  font-family: "Rampart One", sans-serif;
+  font-size: 24px;
+}
+
+
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  
+}
+
+/* TOPタイトル */
+
+/* #top {
+  
+  position: sticky;
+  top: 0;
+} */
+
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.sub-tittle {
+  font-size: small;
+}
+
+.nav-list {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ 
+}
+.nav-list li {
+  color: aquamarine;
+}
+/* Line 1 */ 
+hr{
+  margin: 100px auto;
+  width: 960px;
+  height: 0px;
+  border: 1px solid #000000; 
+}
+/* 
+ここからplof */
+.plofile {
+  margin: 0 auto;
+  text-align: center;
+}
+.plofile-wrapper {
+  display: flex;
+justify-content: center;
+  align-items: center;
+  
+}
+.plof-title {
+  text-align: center;
+  font-size: 30px;
+  color: #F5A700;
+  margin-bottom: 30px;
+}
+.prof-image {
+ 
+  width: 300px;
+  height: 300px;
+  margin-right: 15px;
+  padding-top: 30px;
+
+}
+.timeline-container{
+    text-align: center;
+}
+.timeline {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.about-image{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin: auto;
+}
+.about {
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+.gole {
+  text-align: center;
+  margin-top: 10px;
+  font-size: large;
+  color: #F5A700;
+  font-weight: 700;
+}
+
+/* ここからskill */
+.skill-title {
+  text-align: center;
+  font-size: 30px;
+  color: #E8847D;
+  margin-bottom: 30px;
+  
+}
+
+span.marker {
+  text-align: center;
+  margin-left: 200px;
+  background: linear-gradient(transparent 50%, #E8847D 80%);
+}
+p.text  {
+  font-size: smaller;
+  margin-left: 200px;
+  margin-top: 10px;
+}
+
+/* ここからWORK */
+.exposition {
+  margin: 50px auto;
+  text-align: center;
+}
+.work-title {
+  text-align: center;
+  font-size: 30px;
+  color: #00919E;
+}
+
+.work img{
+  width: 30px;
+  height: 30px;
+}
+
+.work-image img{
+ margin-top: 10px;
+ width: 500px;
+ height: 300px;
+
+}
+
+h3{
+margin: 10px 0 10px 200px;
+
+width: 112px;
+height: 27px;
+color: #fff;
+background: #00919E;
+border-radius: 30px;
+}
+
+/* ①ここから */
+h4 {
+  text-align: left;
+  margin-left: 200px;
+  color: #00919E;
+}
+.detail p {
+  text-align: left;
+  margin-left: 250px;
+}
+.photo {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+
+}
+.photo img {
+  width: 200px;
+  height: 150px;
+}
+ /* ②ここから */
+.sizen-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+
+}
+.sizen-image img {
+  width: 250px;
+  height: 200px;
+}
+
+/* ここからcontact */
+#contact {
+  text-align: center;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 30px;
+  color: #8A6C9D;
+  margin-bottom: 30px;
+}
+
+form div{
+  margin-bottom: 14px;
+ 
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+input[type="text"]
+,input[type="email"]
+,textarea {
+  border: 1px #8A6C9D solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+input[type="text"]
+,input[type="email"] {
+  width: 100%;
+  max-width: 480px;
+}
+textarea {
+  width: 100%;
+  max-width: 480px;
+  height: 6rem;
+}
+button[type="submit"] {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  border: 1px #8A6C9D solid;
+  background-color: #8A6C9D;
+  color: #fff;
+  border-radius: 5px;
+}
+/* ここからフッター */
+#footer {
+  margin-top: 50px;
+  bottom: 20px;
+ text-align: center;
+}
+
+.UpMove {
+  width: 100px;
+  height: 100px;
+  position: sticky;
+  position: fixed;
+  top: 600px;
+  right: 30px;
+  z-index: 1;
+}
