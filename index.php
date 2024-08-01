@@ -1,3 +1,19 @@
+
+<?php
+
+// セッションの利用開始
+session_start();
+
+// ワンタイムトークン生成
+$toke_byte = openssl_random_pseudo_bytes(16);
+$csrf_token = bin2hex($toke_byte);
+
+// トークンをセッションに保存
+$_SESSION['csrf_token'] = $csrf_token;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -14,7 +30,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/move.css">
     </head>
-    
+
 
     <body>
         <header>
@@ -64,7 +80,7 @@
                 <td>KobeBryant/東郷剛さん</td>
             </tr>
             <tr>
-                <td>仕事で大切にしていること：</td>
+                <td>仕事で大切な事：</td>
                 <td>チームワーク</td>
             </tr>
             <tr>
@@ -81,7 +97,7 @@
             </tr>
             <tr>
                 <td>苦手：</td>
-                <td>緊張（練習できない場合等は特に苦手です）</td>
+                <td>自分の話をする事</td>
             </tr>
             <tr>
                 <td>はまっていること：</td>
@@ -112,12 +128,9 @@
             </div>
             <div class="about-image"><img src="image/ball.png" alt=""></div>
             <div class="about">
-            <p>好奇心旺盛で新しいことに挑戦することが好きな一方で、一つの事を続けることも好きです。</p>
-            <P>どんな人の話でも興味が湧き、深堀する事が特技です!仕事でもプライベートでも、チームワークを重視します。</P>
+            <p>好奇心旺盛で新しいことに挑戦することが好きです。</p>
+            <P>どんな人の話でも興味が湧き、深堀する事が特技です。仕事でもプライベートでも、チームワークを重視します。</P>
             <p>常に成長していることを実感したいと考えておりプログラミングは奥が深くとても楽しく取り組んでいます。</p>
-            <p>苦手なことは、理由がはっきりしない効率の悪い規則、長くて話し合わない会議です。</p>
-            <p>理由のない昔はこうだったから、という規則が嫌いで効率の良い規則に変えたくなります。</p>
-            <p>書類を読むだけの会議に時間を取られることがもったいないと感じるタイプです。</p>
             </div>
 
             <div class="gole">
@@ -135,14 +148,13 @@
            <p class="text">HTML/CSS/JavaScript/PHP/SQL/Larabel</p>
            <p><span class="marker">使用ツール</span></p>
            <p class="text">VScode/Github/Sourcetree/FileZilla/Figma/WordPress/Photoshop
-           <p><span class="marker">サーバー</span></p>
-           <p class="text">XAMPP/GCP</p>
         <div class="about">
            <p>上記はフロントエンジニアの職業訓練校とHerTechというデザインのオンラインスクールと独学で学びました。</p>
            <p>Laravelは、放課後や休日に講師の先生に教えていただき、口コミサイトを制作しました。</p>
            <p>とても難しかったですが、出来た時の達成感は大きかったです。</p>
-           <p>デザインやマーケティングの勉強は学校では講義がなく、でも知っておいた方がエンジニアとして良いと思ったので独学で勉強しました。</p>
-           <p>サーバーの構築はもう一度一人でと言われても出来ない自信がありますが、WEBへの理解度がとても深まり、また勉強したいと思いました。</p>
+           <p>デザインやマーケティングの勉強は学校では講義がなくエンジニアになるにあたり</p>
+           <p>知っておく方が良いと思ったので独学で勉強しました。</p>
+           <p>サーバーの構築は、サーバーへの理解度がとても深まり、また勉強したいと思いました。</p>
            <p>今はLaravelを学んだ経験からバックエンドをやりたいと思っていますがフロントエンドも</p>
            <p>とても興味があるのでどちらも極めてフルスタックエンジニアになりたいです！</p>
             </div>
@@ -151,21 +163,22 @@
 
     <hr>
     <section id="work" class="work  box fadeUpTrigger">
+        <div class="update"><p>\随時更新中/</p>
         <h2 class="work-title">Work</h2>
         <div class="exposition">
         <p>①じゃがじゃが宮崎~宮崎県に特化した口コミサイト~</p>
-        <p><a href="https://jmiyazaki.com/">https://jmiyazaki.com/</a></p>
+        <p><a href="https://jmiyazaki.com/">URL:https://jmiyazaki.com/</a></p>
         <p>Github<a href="https://github.com/chip1116/live93.git"><img src="image/github-mark.svg" alt=""></a></p>
         <div class="work-image"><img src="image/home.png" alt=""></div>
         <div class="detail">
             <h3>制作理由</h3>
             <p>宮崎の魅力を伝えたい。複数人で製作経験が積みたい。この理由から、宮崎の地元民がおすすめする口コミサイトを作りました。</p>
-            <h4>使用言語</h4>
-            <p>HTML,CSS,Javascript,Laravel(rivewire)</p>
+            <h4>使用言語等</h4>
+            <p>HTML,CSS,Javascript,Laravel(rivewire),Bootstrap</p>
             <h4>使用ツール</h4>
             <p>Github,Sourcetree,FileZilla,VScode,GCP,XAMPP,Figma</p>
             <h4>製作期間</h4>
-            <p>3ヶ月500時間（打合せも含め）</p>
+            <p>3ヶ月300時間（打合せも含め）</p>
             <h4>制作人数</h4>
             <p>5人</p>
             <h4>担当</h4>
@@ -175,9 +188,9 @@
             <p>情報を集めることに苦労しました。また、テーブル定義の構造が未熟で、何度もデータベースをやり直したところも大変でした。</p>
             <h4>こだわった点</h4>
             <p>宮崎県の観光協会にリンクしてもらえるようにデザインやセキュリティを考え、観光協会を意識したデザインや</p>
-            <p>Laravelを使用しセキュリティを考慮しました。SNSのように、いいねボタンやランキングを作って承認欲求が満たされるように作る事や</p>
-            <p>シンプルで使いやすい使用であることも意識しました。また早く発表するためにMVP開発を行っているつもりで</p>
-            <p>製作し今後アップデートしていく形にしました。</p>
+            <p>Laravelを使用しセキュリティを考慮しました。SNSのように、いいねボタンやランキングを作って承認欲求が</p>
+            <p>満たされるように作る事やシンプルで使いやすい使用であることも意識しました。
+            <p>また早く発表するためにMVP開発を行っているつもりで製作し今後アップデートしていく形にしました。</p>
             <h4>改善点</h4>
             <p>レスポンシブに全ページ対応させる点、ユーザーが投稿を修正できるようにする点。</p>
             <h4>学べたこと</h4>
@@ -212,65 +225,103 @@
         <div class="detail">
         <h3>制作理由</h3>
         <p>授業で身についたスキルをアウトプットする為。クライアントがいる制作を実践する為</p>
-        <h4>使用言語</h4>
+        <h4>使用言語等</h4>
         <p>HTML,CSS,Javascript</p>
         <h4>使用ツール</h4>
-        <p>Github,Sourcetree,VScode,XAMPP,Figma</p>
+        <p>Github,Sourcetree,VScode,Figma</p>
         <h4>製作期間</h4>
         <p>30時間（打合せも含め）</p>
         <h4>制作人数</h4>
         <p>1</p>
         <h4>苦労した点</h4>
-        <p>クライアントの要望を反映したデザインがとても難しく時間がかかりました。HTMLの絶対位置など関係性の理解が甘く</p>
+        <p>クライアントの要望を反映したデザインがとても難しく時間がかかりました。HTMLの要素の理解が甘く</p>
         <p>うまくCSSが反映されない事があり、もっと勉強が必要と感じました。</p>
         <h4>こだわった点</h4>
         <p>クライアントの要望のナチュラルな雰囲気や農家さんを前面に出すなど要望を踏まえた上で、</p>
-        <p>現状のHPの課題であるSNSをアピールして集客を増やす為に、常にSNSへのリンクがスクロールでついてくるようにした事です。</p>
+        <p>現状のHPの課題であるSNSをアピールして集客を増やす為に、</p>
+        <p>常にSNSへのリンクがスクロールでついてくるようにした事です。</p>
         <h4>改善点</h4>
-        <p>自社販売ページをPHPで作りたかったが時間が足りずできなかった事と、レスポンシブまで考えたコーディングができるようになりたいと思いました。</p>
+        <p>自社販売ページをPHPで作りたかったが時間が足りずできなかった事と、</p>
+        <p>レスポンシブまで考えたコーディングができるようになりたいと思いました。</p>
         <h4>学べたこと</h4>
-        <p>HTML/CSSの書き方がとてもたくさんあり、最適な方法を探りながらコーディングする必要を感じました。</p>
+        <p>HTML/CSSの書き方がとても多くあり、最適な方法を探りながらコーディングする必要を感じました。</p>
         <p>クライアントとの認識のすり合わせが非常に難しく時間がかかる工程で工夫が大切だと学びました。</p>
         </div>
 
         <div class="exposition">
-            <p>③Portfolio紹介サイト</p>
-            <p>URL:</p>
-        <p>Github<a href="https://github.com/chip1116/live93.git"><img src="image/github-mark.svg" alt=""></a></p>
-        <div class="Portfolio-image">
-            <img src="image/sizen.png" alt="toppage">
-           
-        </div>
+            <div class="gap">
+                <p>③Portfolio紹介サイト</p>
+                <p>URL:<a href="https://rerechip.click/portfolio.html">https://rerechip.click/portfolio.html</a></p>
+                <p>Github<a href="https://github.com/chip1116/portfolio.git"><img src="image/github-mark.svg" alt=""></a></p>
+            <div class="Portfolio-image">
+                <img src="image/portfolio2.png" alt="toppage">
+            </div>
+            </div>
         <div class="detail">
         <h3>制作理由</h3>
-        <p>授業で身についたスキルをアウトプットする為。クライアントがいる制作を実践する為</p>
-        <h4>使用言語</h4>
-        <p>HTML,CSS,Javascript</p>
+        <p>自分の制作した作品を管理し記録してアウトプットすることでスキルアップにつなげる為に制作</p>
+        <h4>使用言語等</h4>
+        <p>HTML,CSS,Javascript,PHP,jquery</p>
         <h4>使用ツール</h4>
         <p>Github,Sourcetree,VScode,XAMPP,Figma</p>
         <h4>製作期間</h4>
-        <p>30時間（打合せも含め）</p>
+        <p>30時間</p>
         <h4>制作人数</h4>
         <p>1</p>
         <h4>苦労した点</h4>
-        <p>クライアントの要望を反映したデザインがとても難しく時間がかかりました。HTMLの絶対位置など関係性の理解が甘く</p>
-        <p>うまくCSSが反映されない事があり、もっと勉強が必要と感じました。</p>
+        <p>いいデザインが浮かばなかった事と、レスポンシブが難しく大変でした。</p>
+        <p>また、初めてセキュリティに関するコードを書いたのでその点も難しかったです。</p>
         <h4>こだわった点</h4>
-        <p>クライアントの要望のナチュラルな雰囲気や農家さんを前面に出すなど要望を踏まえた上で、</p>
-        <p>現状のHPの課題であるSNSをアピールして集客を増やす為に、常にSNSへのリンクがスクロールでついてくるようにした事です。</p>
+        <p>シンプルに要点をまとめること</p>
         <h4>改善点</h4>
-        <p>自社販売ページをPHPで作りたかったが時間が足りずできなかった事と、レスポンシブまで考えたコーディングができるようになりたいと思いました。</p>
+        <p>デザインやUIをブラッシュアップしていきたいです。</p>
         <h4>学べたこと</h4>
-        <p>HTML/CSSの書き方がとてもたくさんあり、最適な方法を探りながらコーディングする必要を感じました。</p>
-        <p>クライアントとの認識のすり合わせが非常に難しく時間がかかる工程で工夫が大切だと学びました。</p>
+        <p>学校で習った時よりCSSの書き方や出来ることが検索すると新しい事を発見し</p>
+        <p>短期間にどんどん変わっていく変化の速さを感じました。</p>
+        <p>その変化に対応するために、こまめに調べる大切さを学べました。</p>
+        <p>また、レスポンシブが少しわかり始めたと感じました。</p>
         </div>
        
-    </section>
-    <hr>
+    
+    <div class="exposition">
+        <div class="gap">
+            <p>④チーム分けWEBシステム</p>
+            <p>URL:<a href="https://team.rerechip.click">https://team.rerechip.click</a></p>
+            <p>Github<a href="https://github.com/chip1116/Team-.git"><img src="image/github-mark.svg" alt=""></a></p>
+        <div class="Portfolio-image">
+            <img src="image/team1.png" alt="toppage">
+        </div>
+        </div>
+    <div class="detail">
+    <h3>制作理由</h3>
+    <p>チーム分けを簡単にしたい。JSで制作した経験が少ない、Bootstrap以外のCSSフレームワークを使用したかった為</p>
+    <h4>使用言語</h4>
+    <p>HTML,CSS,Javascript,Bulma</p>
+    <h4>使用ツール</h4>
+    <p>Github,Sourcetree,VScode</p>
+    <h4>製作期間</h4>
+    <p>15時間</p>
+    <h4>制作人数</h4>
+    <p>1人</p>
+    <h4>苦労した点</h4>
+    <p>javascriptが非常に難しく、複数の本やサイトを探して時間がかかりました。</p>
+    <p>またBulmaも資料が少なくやりたいことを実現することが大変でした。</p>
+    <h4>こだわった点</h4>
+    <p>JSで製作すること。そのためにJSに干渉しないBulmaを選んで使用しました。</p>
+    <h4>改善点</h4>
+    <p>あらかじめ登録して選択式になるようにしてみたいと思いました。</p>
+    <h4>学べたこと</h4>
+    <p>JSの奥深さに少し触れ、授業の内容だけでは全く足りず、もっとたくさん勉強しなければと思いました。</p>
+    <p>フレームワークでレスポンシブがすぐできており、手軽さを体感しました。</p>
+    <p>しかし、手軽なだけではなく、何ができるのかしっかり把握する必要性を学びました。</p>
+    </div>
+   
+</section>
+<hr>
     <section id="contact" class="work  box fadeUpTrigger">
         <h2 class="contact-title">Contact</h2>
 
-        <form action="contact.php" method="post">
+        <form action="contact.php" method="POST">
             <div>
                 <label for="name">お名前</label>
                 <input type="text" id="name" name="name">
@@ -281,8 +332,9 @@
             </div>
             <div>
                 <label for="message">メッセージ</label>
-                <textarea id="message" name="massage"></textarea>
+                <textarea id="message" name="message"></textarea>
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>"/>
 
             <button type="submit">送信</button>
         </form>
